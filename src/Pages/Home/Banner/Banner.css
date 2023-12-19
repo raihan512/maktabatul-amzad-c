@@ -1,0 +1,12 @@
+.line-clamp-2 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+@media (max-width: 575px) {
+  .hero-title.line-clamp-2 {
+    -webkit-line-clamp: 1;
+  }
+}

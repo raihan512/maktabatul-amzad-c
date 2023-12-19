@@ -1,0 +1,63 @@
+[
+  {
+    "categoryId": "category1",
+    "name": [
+      "আল-কোরআন এবং এর বিজ্ঞান",
+      "The Holy Quran and its Sciences",
+      "القرآن الكريم وعلومه"
+    ]
+  },
+  { "categoryId": "category2", "name": ["ঈমান", "Creed", "العقيدة"] },
+  {
+    "categoryId": "category3",
+    "name": [
+      "সহীহ হাদীস এবং এর বিজ্ঞান",
+      "Hadith and its Sciences",
+      "ألحاديث الشريفة وعلومها"
+    ]
+  },
+  {
+    "categoryId": "category4",
+    "name": [
+      "ইসলামিক ফিকহ এবং ইসলামের সূচনা",
+      "Islamic Jurisprudence and its Principles",
+      "الفقه اإلسالمي وأصوله"
+    ]
+  },
+  {
+    "categoryId": "category5",
+    "name": [
+      "সাহিত্য এবং ভাষার বই",
+      "Books of Literature and Language",
+      "كتب األدب واللغة"
+    ]
+  },
+  {
+    "categoryId": "category6",
+    "name": ["জীবনচরিত্র বই", "Biography Books", "كتب السير"]
+  },
+  {
+    "categoryId": "category7",
+    "name": [
+      "বিদ্বেষ এবং ভক্তি",
+      "Asceticism and Spiritual Insights",
+      "الزهد والرقائق"
+    ]
+  },
+  {
+    "categoryId": "category8",
+    "name": ["ইতিহাস এবং ভূগোল", "History and Geography", "التاريخ والجغرافيا"]
+  },
+  {
+    "categoryId": "category9",
+    "name": ["বিজ্ঞান এবং শাসন", "Science and Governance", "العلوم والحكم"]
+  },
+  {
+    "categoryId": "category10",
+    "name": ["ধর্মীয় বই", "Religious Books", "كتب دينية"]
+  },
+  {
+    "categoryId": "category11",
+    "name": ["ফিকহ", "Fikh", "الفقه الحنفي"]
+  }
+]

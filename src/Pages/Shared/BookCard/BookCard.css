@@ -1,0 +1,13 @@
+.book-card:hover img {
+  transform: scale(0.8);
+}
+.book-card:hover .book-card-star {
+  color: #f9ac20;
+}
+
+.book-summary {
+  transition: all 0.4s;
+}
+.book-card:hover .book-summary {
+  transform: translateY(-50px);
+}

@@ -1,0 +1,241 @@
+[
+  {
+    "subCategoryId": "category1sub1",
+    "mainCategory": "category1",
+    "name": ["কুরআন", "The Qur'an", "العقيدة والتوحيد"]
+  },
+  {
+    "subCategoryId": "category1sub2",
+    "mainCategory": "category1",
+    "name": ["রিডিং এবং স্বর", "Readings and Intonation", "القراءات والتجويد"]
+  },
+  {
+    "subCategoryId": "category1sub3",
+    "mainCategory": "category1",
+    "name": ["ব্যাখ্যা", "Tafsir", "التفاسير"]
+  },
+  {
+    "subCategoryId": "category1sub4",
+    "mainCategory": "category1",
+    "name": [
+      "পবিত্র কুরআনের বিজ্ঞান",
+      "Sciences of the Holy Quran",
+      "علوم القرآن الكريم"
+    ]
+  },
+  {
+    "subCategoryId": "category1sub5",
+    "mainCategory": "category1",
+    "name": ["প্রকাশের কারণ", "Reasons for Revelation", "أسباب النزول"]
+  },
+  {
+    "subCategoryId": "category2sub1",
+    "mainCategory": "category2",
+    "name": [
+      "মতবাদ এবং একেশ্বরবাদ",
+      "Doctrine and Monotheism",
+      "العقيدة والتوحيد"
+    ]
+  },
+  {
+    "subCategoryId": "category2sub2",
+    "mainCategory": "category2",
+    "name": ["নাম এবং গুণাবলী", "Nouns and Adjectives", "الأسماء والصفات"]
+  },
+  {
+    "subCategoryId": "category3sub1",
+    "mainCategory": "category3",
+    "name": ["মুতুন আল-হাদিস", "Mutūn al-Hadith", "متون الحديث"]
+  },
+  {
+    "subCategoryId": "category3sub2",
+    "mainCategory": "category3",
+    "name": ["হাদিসের ব্যাখ্যা", "Explanations of Hadith", "شروح الحديث"]
+  },
+  {
+    "subCategoryId": "category3sub3",
+    "mainCategory": "category3",
+    "name": [
+      "হাদিস বিজ্ঞান ও এর মূলনীতি",
+      "Hadith Sciences and Its Principles",
+      "علوم الحديث وأصوله"
+    ]
+  },
+  {
+    "subCategoryId": "category3sub4",
+    "mainCategory": "category3",
+    "name": ["আধুনিক অংশ", "Modern parts", "الأجزاء الحديثية"]
+  },
+  {
+    "subCategoryId": "category3sub5",
+    "mainCategory": "category3",
+    "name": ["হাদিসের পরিভাষা", "Hadith Terminology", "علم مصطلح الحديث"]
+  },
+  {
+    "subCategoryId": "category3sub6",
+    "mainCategory": "category3",
+    "name": [
+      "নাম এবং পুরুষদের বিজ্ঞান",
+      "The Science of Names and Men",
+      "علم الأسماء والرجال"
+    ]
+  },
+  {
+    "subCategoryId": "category3sub7",
+    "mainCategory": "category3",
+    "name": [
+      "আঘাত এবং সমালোচনামূলক পরিবর্তনের বিজ্ঞান",
+      "Science of Injury and Critical Modification",
+      "علم الجرح والتعديل النقد"
+    ]
+  },
+  {
+    "subCategoryId": "category3sub8",
+    "mainCategory": "category3",
+    "name": [
+      "জীববিজ্ঞান, শ্রেণী এবং বংশতালিকা",
+      "Biology, Classes, and Genealogy",
+      "علم التراجم والطبقات والأنساب"
+    ]
+  },
+  {
+    "subCategoryId": "category4sub1",
+    "mainCategory": "category4",
+    "name": ["সমস্যার উপর বই", "Books on Issues", "كتب المسائل"]
+  },
+  {
+    "subCategoryId": "category4sub2",
+    "mainCategory": "category4",
+    "name": ["ফতোয়া বই", "Fatwa Books", "كتب الفتاوى"]
+  },
+  {
+    "subCategoryId": "category4sub3",
+    "mainCategory": "category4",
+    "name": [
+      "আইনশাস্ত্রের মূলনীতি এবং আইনশাস্ত্রের নিয়ম",
+      "The Principles of Jurisprudence and the Rules of Jurisprudence",
+      "أصول الفقه والقواعد الفقهية"
+    ]
+  },
+  {
+    "subCategoryId": "category4sub4",
+    "mainCategory": "category4",
+    "name": [
+      "তুলনামূলক আইনশাস্ত্র এবং মতবাদ",
+      "Comparative Jurisprudence and Doctrines",
+      "فقه المقارن والمذاهب"
+    ]
+  },
+  {
+    "subCategoryId": "category5sub1",
+    "mainCategory": "category5",
+    "name": ["ব্যাকরণ", "Grammar", "النحو والصرف"]
+  },
+  {
+    "subCategoryId": "category5sub2",
+    "mainCategory": "category5",
+    "name": [
+      "ভাষা, অভিধান এবং বিশ্বকোষ",
+      "Languages, Dictionaries and Encyclopedias",
+      "اللغات والمعاجم والموسوعات"
+    ]
+  },
+  {
+    "subCategoryId": "category5sub3",
+    "mainCategory": "category5",
+    "name": [
+      "সাহিত্য এবং অলঙ্কারশাস্ত্র",
+      "Literature and Rhetoric",
+      "الأدب والبلاغة"
+    ]
+  },
+  {
+    "subCategoryId": "category5sub4",
+    "mainCategory": "category5",
+    "name": ["সিস্টেম এবং কবিতা", "Systems and Poetry", "النظم والِأشعار"]
+  },
+  {
+    "subCategoryId": "category6sub1",
+    "mainCategory": "category6",
+    "name": ["হাঁটছি আর হাঁটছি", "Walking and Walking", "السير والشمائل"]
+  },
+  {
+    "subCategoryId": "category6sub2",
+    "mainCategory": "category6",
+    "name": ["অনুবাদ", "Translations", "التراجم"]
+  },
+  {
+    "subCategoryId": "category6sub3",
+    "mainCategory": "category6",
+    "name": [
+      "সাহাবী ও অনুসারী",
+      "Companions and Followers",
+      "الصحابة والتابعون"
+    ]
+  },
+  {
+    "subCategoryId": "category7sub1",
+    "mainCategory": "category7",
+    "name": [
+      "সুপারিশ এবং নৈতিকতা",
+      "Recommendation and Morals",
+      "التزكية والآداب الأخلاق"
+    ]
+  },
+  {
+    "subCategoryId": "category8sub1",
+    "mainCategory": "category8",
+    "name": [
+      "ইতিহাস ও পুরাতত্ত্ব",
+      "History and Archaeology",
+      "التاريخ والآثار"
+    ]
+  },
+  {
+    "subCategoryId": "category8sub2",
+    "mainCategory": "category8",
+    "name": ["ভূগোল", "Geography", "الجغرافيا"]
+  },
+  {
+    "subCategoryId": "category8sub3",
+    "mainCategory": "category8",
+    "name": ["সমাজতাত্ত্ব", "Sociology", "علم الاجتماع"]
+  },
+  {
+    "subCategoryId": "category9sub1",
+    "mainCategory": "category9",
+    "name": ["বিজ্ঞান ও শাসন", "Science and Governance", "العلوم والحكم"]
+  },
+  {
+    "subCategoryId": "category9sub2",
+    "mainCategory": "category9",
+    "name": [
+      "প্রাকৃতিক বিজ্ঞান এবং দর্শন",
+      "Natural Science and Philosophy",
+      "علوم الطبيعة والفلسفة"
+    ]
+  },
+  {
+    "subCategoryId": "category9sub3",
+    "mainCategory": "category9",
+    "name": [
+      "প্রাণি বিজ্ঞান এবং জীববৈচিত্র",
+      "Zoology and Organisms",
+      "علم الحيوانات والكائنات"
+    ]
+  },
+  {
+    "subCategoryId": "category9sub4",
+    "mainCategory": "category9",
+    "name": [
+      "রাজনীতি এবং বৌদ্ধিক বিষয়",
+      "Politics and Intellectual Issues",
+      "السياسة والعقضايا الفكرية"
+    ]
+  },
+  {
+    "subCategoryId": "category10sub1",
+    "mainCategory": "category10",
+    "name": ["ধর্মীয় বই", "General Religious Books", "كتب دينية عامة"]
+  }
+]
