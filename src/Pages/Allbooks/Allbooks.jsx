@@ -7,11 +7,10 @@ const Allbooks = () => {
   const [books, setBooks] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/api/books")
+    fetch("https://maktabatul-amzad-server.onrender.com/api/books")
       .then((res) => res.json())
       .then((data) => setBooks(data));
   }, []);
-  console.log(books);
   return (
     <section>
       <div className="container mx-auto px-0.5 sm:px-3 md:px-0 mb-8">

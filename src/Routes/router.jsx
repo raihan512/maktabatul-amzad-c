@@ -13,6 +13,7 @@ import AllWriters from "../Pages/AllWriters/AllWriters";
 import WriterDetails from "../Pages/WriterDetails/WriterDetails";
 import AllCategories from "../Pages/AllCategories/AllCategories";
 import Category from "../Pages/Category/Category";
+import AddBook from "../Pages/Admin/AddBook/AddBook";
 
 export const router = createBrowserRouter([
   {
@@ -56,6 +57,10 @@ export const router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(`http://localhost:3000/api/books/${params.id}`),
+      },
+      {
+        path: "/addbook",
+        element: <AddBook></AddBook>,
       },
       {
         path: "/cartdetails",

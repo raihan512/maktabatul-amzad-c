@@ -13,7 +13,7 @@ const BookCard = ({ book }) => {
   const [selectedWriters, setSelectedWriters] = useState([]);
   // Load this book writers details writers
   useEffect(() => {
-    fetch("http://localhost:3000/api/writer/getwriters", {
+    fetch("http://localhost:3000/api/writers/getwriters", {
       method: "POST",
       headers: {
         "content-type": "application/json",
