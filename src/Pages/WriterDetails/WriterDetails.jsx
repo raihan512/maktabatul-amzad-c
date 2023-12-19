@@ -12,13 +12,16 @@ const WriterDetails = () => {
   // Load this writer books
   const [writerBooks, setWriterBooks] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:3000/api/books/writerbooks", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify([`${writerId}`]),
-    })
+    fetch(
+      "https://maktabatul-amzad-server.onrender.com/api/books/writerbooks",
+      {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify([`${writerId}`]),
+      }
+    )
       .then((res) => res.json())
       .then((data) => setWriterBooks(data));
   }, []);

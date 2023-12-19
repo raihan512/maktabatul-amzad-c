@@ -41,7 +41,6 @@ const AddBook = () => {
     console.log(name, price);
 
     fetch("https://maktabatul-amzad-server.onrender.com/api/addbook", {
-      // fetch("http://localhost:3000/api/addbook", {
       method: "POST",
       headers: {
         "content-type": "application/json",

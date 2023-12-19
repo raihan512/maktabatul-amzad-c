@@ -5,11 +5,13 @@ import BookCard from "../Shared/BookCard/BookCard";
 const Category = () => {
   const category = useLoaderData();
   const [loadBy, setLoadBy] = useState([`${category[0].categoryId}`]);
-  const [url, setUrl] = useState("http://localhost:3000/api/books/category");
+  const [url, setUrl] = useState(
+    "https://maktabatul-amzad-server.onrender.com/api/books/category"
+  );
   //   Load all sub categories
   const [subCategories, setSubCategories] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:3000/api/subcategory")
+    fetch("https://maktabatul-amzad-server.onrender.com/api/subcategory")
       .then((res) => res.json())
       .then((data) => setSubCategories(data));
   }, []);
@@ -21,7 +23,9 @@ const Category = () => {
   //   load and show books based on category and subCategory
   const [books, setBooks] = useState([]);
   const handleChangeLoadBy = (subCategoryId) => {
-    setUrl("http://localhost:3000/api/books/subcategory");
+    setUrl(
+      "https://maktabatul-amzad-server.onrender.com/api/books/subcategory"
+    );
     setLoadBy([subCategoryId]);
   };
   useEffect(() => {
