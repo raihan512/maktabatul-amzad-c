@@ -13,13 +13,16 @@ const BookCard = ({ book }) => {
   const [selectedWriters, setSelectedWriters] = useState([]);
   // Load this book writers details writers
   useEffect(() => {
-    fetch("http://localhost:3000/api/writers/getwriters", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(writer),
-    })
+    fetch(
+      "https://maktabatul-amzad-server.onrender.com/api/writers/getwriters",
+      {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(writer),
+      }
+    )
       .then((res) => res.json())
       .then((data) => setSelectedWriters(data));
   }, []);
