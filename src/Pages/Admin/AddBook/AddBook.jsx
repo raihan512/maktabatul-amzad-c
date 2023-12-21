@@ -9,7 +9,7 @@ const AddBook = () => {
 
   const [categories, setCategories] = useState([]);
   useEffect(() => {
-    fetch("https://maktabatul-amzad-server.onrender.com/api/categories")
+    fetch("http://localhost:3000/api/categories")
       .then((res) => res.json())
       .then((data) => setCategories(data));
   }, []);
@@ -40,7 +40,7 @@ const AddBook = () => {
     const price = form.price.value;
     console.log(name, price);
 
-    fetch("https://maktabatul-amzad-server.onrender.com/api/addbook", {
+    fetch("http://localhost:3000/api/addbook", {
       method: "POST",
       headers: {
         "content-type": "application/json",

@@ -7,7 +7,7 @@ const AllCategories = () => {
   // Load all categories
   const [categories, setcategories] = useState([]);
   useEffect(() => {
-    fetch("https://maktabatul-amzad-server.onrender.com/api/categories")
+    fetch("http://localhost:3000/api/categories")
       .then((res) => res.json())
       .then((data) => setcategories(data));
   }, []);

@@ -35,7 +35,7 @@ const Banner = () => {
                     </p>
                     <Link
                       className="text-primary text-base lg:text-lg hover:underline"
-                      to="https://maktabatul-amzad-server.onrender.com/book/8"
+                      to="http://localhost:3000/book/8"
                     >
                       View more
                     </Link>
@@ -65,7 +65,7 @@ const Banner = () => {
                     </p>
                     <Link
                       className="text-primary text-base lg:text-lg hover:underline"
-                      to="https://maktabatul-amzad-server.onrender.com/book/8"
+                      to="http://localhost:3000/book/8"
                     >
                       View more
                     </Link>

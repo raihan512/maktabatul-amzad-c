@@ -31,16 +31,13 @@ const BookDetails = () => {
   const [selectedWriters, setSelectedWriters] = useState([]);
   // Load this book writers details writers
   useEffect(() => {
-    fetch(
-      "https://maktabatul-amzad-server.onrender.com/api/writers/getwriters",
-      {
-        method: "POST",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify(writer),
-      }
-    )
+    fetch("http://localhost:3000/api/writers/getwriters", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(writer),
+    })
       .then((res) => res.json())
       .then((data) => setSelectedWriters(data));
   }, []);
@@ -48,48 +45,40 @@ const BookDetails = () => {
   // Load this book publisher details
   const [selectedPublisher, setSelectedPublisher] = useState([]);
   useEffect(() => {
-    fetch(
-      "https://maktabatul-amzad-server.onrender.com/api/publishers/getpublisher",
-      {
-        method: "POST",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify([`${publisher}`]),
-      }
-    )
+    fetch("http://localhost:3000/api/publishers/getpublisher", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify([`${publisher}`]),
+    })
       .then((res) => res.json())
       .then((data) => setSelectedPublisher(data));
   }, []);
   // Load this book categories details writers
   const [selectedCategory, setSelectedCategory] = useState([]);
   useEffect(() => {
-    fetch(
-      "https://maktabatul-amzad-server.onrender.com/api/categories/getcategory",
-      {
-        method: "POST",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify({ categoryId: category }),
-      }
-    )
+    fetch("http://localhost:3000/api/categories/getcategory", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({ categoryId: category }),
+    })
       .then((res) => res.json())
       .then((data) => setSelectedCategory(data));
   }, []);
 
+  console.log(selectedCategory);
   const [selectedSubCategory, setSelectedSubCategory] = useState([]);
   useEffect(() => {
-    fetch(
-      "https://maktabatul-amzad-server.onrender.com/api/subcategories/getsubCategory",
-      {
-        method: "POST",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify({ subCategoryId: subCategory }),
-      }
-    )
+    fetch("http://localhost:3000/api/subcategories/getsubCategory", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({ subCategoryId: subCategory }),
+    })
       .then((res) => res.json())
       .then((data) => setSelectedSubCategory(data));
   }, []);
@@ -98,7 +87,7 @@ const BookDetails = () => {
     <section className="my-10">
       <div className="container mx-auto px-0.5 sm:px-3 md:px-0 mb-8">
         <div className="grid grid-cols-12 gap-5">
-          <div className="col-span-9">
+          <div className="col-span-12 md:col-span-9">
             {/* Bookdetails top part */}
             <div className="grid grid-cols-1 sm:grid-cols-5 gap-5">
               <img
@@ -249,7 +238,7 @@ const BookDetails = () => {
               </>
             )}
           </div>
-          <div className="col-span-3 ml-auto">
+          <div className="col-span-12 md:col-span-3 mr-auto md:ml-auto">
             <RelatedBooks bookCategory={category}></RelatedBooks>
           </div>
         </div>

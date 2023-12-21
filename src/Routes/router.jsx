@@ -40,17 +40,13 @@ export const router = createBrowserRouter([
         path: "/categories/:categoryId",
         element: <Category></Category>,
         loader: ({ params }) =>
-          fetch(
-            `https://maktabatul-amzad-server.onrender.com/api/categories/${params.categoryId}`
-          ),
+          fetch(`http://localhost:3000/api/categories/${params.categoryId}`),
       },
       {
-        path: "/writers/:writerId",
+        path: "/writers/:writer",
         element: <WriterDetails></WriterDetails>,
         loader: ({ params }) =>
-          fetch(
-            `https://maktabatul-amzad-server.onrender.com/api/writer/${params.writerId}`
-          ),
+          fetch(`http://localhost:3000/api/writers/${params.writer}`),
       },
       {
         path: "/book/:id",
@@ -60,9 +56,7 @@ export const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(
-            `https://maktabatul-amzad-server.onrender.com/api/books/${params.id}`
-          ),
+          fetch(`http://localhost:3000/api/books/${params.id}`),
       },
       {
         path: "/addbook",

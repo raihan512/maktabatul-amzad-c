@@ -6,25 +6,18 @@ import BookCard from "../Shared/BookCard/BookCard";
 
 const WriterDetails = () => {
   const { language } = useContext(ThemeContext);
-  const writerDetails = useLoaderData();
-  const { image, name, desc, writerId } = writerDetails[0];
+  const writer = useLoaderData();
+  const { name, writerId, desc, image } = writer;
 
-  // Load this writer books
-  const [writerBooks, setWriterBooks] = useState([]);
+  const [books, setBooks] = useState([]);
   useEffect(() => {
-    fetch(
-      "https://maktabatul-amzad-server.onrender.com/api/books/writerbooks",
-      {
-        method: "POST",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify([`${writerId}`]),
-      }
-    )
+    fetch("http://localhost:3000/api/books")
       .then((res) => res.json())
-      .then((data) => setWriterBooks(data));
+      .then((data) => setBooks(data));
   }, []);
+
+  const writerBooks = books.filter((book) => book.writer.includes(writerId));
+
   return (
     <section className="min-h-screen">
       <div className="container mx-auto px-0.5 sm:px-3 md:px-0 mb-8">

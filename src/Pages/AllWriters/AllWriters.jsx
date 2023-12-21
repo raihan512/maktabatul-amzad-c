@@ -6,7 +6,7 @@ const AllWriters = () => {
   const { language } = useContext(ThemeContext);
   const [writers, setWriters] = useState([]);
   useEffect(() => {
-    fetch("https://maktabatul-amzad-server.onrender.com/api/writers")
+    fetch("http://localhost:3000/api/writers")
       .then((res) => res.json())
       .then((data) => setWriters(data));
   }, []);
