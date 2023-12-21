@@ -7,7 +7,7 @@ const Allbooks = () => {
   const [books, setBooks] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/api/books")
+    fetch("https://maktabatul-amzad-server.onrender.com/api/books")
       .then((res) => res.json())
       .then((data) => setBooks(data));
   }, []);
