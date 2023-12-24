@@ -115,6 +115,12 @@ const HeaderTop = () => {
                       <div className="bg-red flex flex-col">
                         <Link
                           className="text-base text-black py-2 pl-8 pr-20 hover:bg-gray hover:text-white"
+                          to="admin"
+                        >
+                          Admin
+                        </Link>
+                        <Link
+                          className="text-base text-black py-2 pl-8 pr-20 hover:bg-gray hover:text-white"
                           to="signin"
                         >
                           My Profile

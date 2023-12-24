@@ -13,10 +13,15 @@ import AllWriters from "../Pages/AllWriters/AllWriters";
 import WriterDetails from "../Pages/WriterDetails/WriterDetails";
 import AllCategories from "../Pages/AllCategories/AllCategories";
 import Category from "../Pages/Category/Category";
-import AddBook from "../Pages/Admin/AddBook/AddBook";
+import Admin from "../Layout/Admin";
 import PublisherDetails from "../Pages/PublisherDetails/PublisherDetails";
+import AddBook from "../Pages/Admin/AddBook/AddBook";
+import AddWriter from "../Pages/Admin/AddWriter/AddWriter";
+import AddPublisher from "../Pages/Admin/AddPublisher/AddPublisher";
+import AddSubject from "../Pages/Admin/AddSubject/AddSubject";
+import AddSubSubject from "../Pages/Admin/AddSubSubject/AddSubSubject";
 import BookTable from "../Pages/Admin/BookTable/BookTable";
-import UpdateBook from "../Pages/Admin/UpdateBook/UpdateBook";
+import ErrorPage from "../Pages/Shared/ErrorPage/ErrorPage";
 
 export const router = createBrowserRouter([
   {
@@ -75,22 +80,7 @@ export const router = createBrowserRouter([
             `https://maktabatul-amzad-server.onrender.com/api/publisher/:${params.publisherId}`
           ),
       },
-      {
-        path: "/addbook",
-        element: <AddBook></AddBook>,
-      },
-      {
-        path: "/watchbooks",
-        element: <BookTable></BookTable>,
-      },
-      {
-        path: "/updatebook/:id",
-        element: <UpdateBook></UpdateBook>,
-        loader: ({ params }) =>
-          fetch(
-            `https://maktabatul-amzad-server.onrender.com/api/books/${params.id}`
-          ),
-      },
+
       {
         path: "/cartdetails",
         element: (
@@ -118,5 +108,39 @@ export const router = createBrowserRouter([
         element: <ConfirmEmail></ConfirmEmail>,
       },
     ],
+  },
+  {
+    path: "/admin",
+    element: <Admin></Admin>,
+    children: [
+      {
+        path: "addbook",
+        element: <AddBook></AddBook>,
+      },
+      {
+        path: "booklist",
+        element: <BookTable></BookTable>,
+      },
+      {
+        path: "addwriter",
+        element: <AddWriter></AddWriter>,
+      },
+      {
+        path: "addpublisher",
+        element: <AddPublisher></AddPublisher>,
+      },
+      {
+        path: "addcategory",
+        element: <AddSubject></AddSubject>,
+      },
+      {
+        path: "addsubcategory",
+        element: <AddSubSubject></AddSubSubject>,
+      },
+    ],
+  },
+  {
+    path: "*",
+    element: <ErrorPage></ErrorPage>,
   },
 ]);

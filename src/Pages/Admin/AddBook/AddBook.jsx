@@ -128,10 +128,10 @@ const AddBook = () => {
   };
   return (
     <section className="min-h-screen">
-      <div className="container mx-auto px-0.5 sm:px-3 md:px-0 mb-8">
+      <div className="px-0.5 sm:px-3 md:px-0">
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="grid grid-cols-3 gap-5 w-[60%] mx-auto my-20"
+          className="grid grid-cols-3 gap-5 p-5"
         >
           <div className="col-span-3 grid grid-cols-4 gap-5">
             <div className="col-span-2">
