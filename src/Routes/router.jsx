@@ -15,6 +15,8 @@ import AllCategories from "../Pages/AllCategories/AllCategories";
 import Category from "../Pages/Category/Category";
 import AddBook from "../Pages/Admin/AddBook/AddBook";
 import PublisherDetails from "../Pages/PublisherDetails/PublisherDetails";
+import BookTable from "../Pages/Admin/BookTable/BookTable";
+import UpdateBook from "../Pages/Admin/UpdateBook/UpdateBook";
 
 export const router = createBrowserRouter([
   {
@@ -76,6 +78,18 @@ export const router = createBrowserRouter([
       {
         path: "/addbook",
         element: <AddBook></AddBook>,
+      },
+      {
+        path: "/watchbooks",
+        element: <BookTable></BookTable>,
+      },
+      {
+        path: "/updatebook/:id",
+        element: <UpdateBook></UpdateBook>,
+        loader: ({ params }) =>
+          fetch(
+            `https://maktabatul-amzad-server.onrender.com/api/books/${params.id}`
+          ),
       },
       {
         path: "/cartdetails",
