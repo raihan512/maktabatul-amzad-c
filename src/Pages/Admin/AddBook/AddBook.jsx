@@ -4,6 +4,7 @@ import { ThemeContext } from "../../../Providers/ThemeProvider";
 import { json } from "react-router-dom";
 import { data } from "autoprefixer";
 import { useForm } from "react-hook-form";
+import toast, { Toaster } from "react-hot-toast";
 
 const AddBook = () => {
   const {
@@ -80,6 +81,15 @@ const AddBook = () => {
             publisher,
             category,
             subcategory,
+            bndesc,
+            endesc,
+            ardesc,
+            bnprice,
+            enprice,
+            arprice,
+            bnpage,
+            enpage,
+            arpage,
           } = data;
           const newBook = {
             title: [bookbangla, bookenglish, bookarabic],
@@ -88,16 +98,14 @@ const AddBook = () => {
             subCategory: subcategory,
             publisher: publisher,
             publisherCountry: ["বাংলাদেশ", "Bangladesh", "بنغلاديش"],
-            price: ["২০০", "200", "۲۰۰"],
-            pages: ["২০", "20", "۲۰"],
+            price: [bnprice, enprice, arprice],
+            pages: [bnpage, enpage, arpage],
             editor: ["editor02"],
             writer: [writer],
-            desc: [
-              "স্বপ্ন-ষড়যন্ত্র-দাসত্ব-দুর্ভিক্ষ-রাজত্ব—কী দারুণ এক সত্য আখ্যান! বাধা-বিপত্তির দেয়াল পেরিয়ে মঞ্জিলে পৌঁছার এই অসাধারণ গল্প কোটি হৃদয়কে উজ্জীবিত করছে শত সহস্র বছর ধরে। হতাশার পাহাড় মাড়িয়ে আশার আলো জ্বালিয়ে দেওয়ার এ গল্প আজকের প্রজন্মকেও স্পর্শ করে খুব। লালসার সমুদ্রে এ যেন পবিত্র একফোঁটা স্বচ্ছ জলবিন্দু! ইউসুফ আলাইহিস সালাম আমাদের বিজয়ী মহানায়ক, বিশ্বাসীদের নকিব। সূরা ইউসুফ আমাদের প্রত্যাশিত জীবনের এক অনন্য রিফ্লেকশন।",
-              "Dream-conspiracy-slavery-famine-reign—what a great true story! This extraordinary story of crossing the walls of obstacles and reaching the destination has been enlivening millions of hearts for hundreds of thousands of years. This story of breaking the mountain of despair and lighting the light of hope touches today's generation too. In the sea of lust, this is like a holy drop of clear water! Yusuf Alaihis Salam is our victorious hero, Naqeeb of the believers. Surah Yusuf is a unique reflection of our expected life.",
-              "حلم، مؤامرة، عبودية، مجاعة، حكم، يا لها من قصة حقيقية عظيمة! هذه القصة الاستثنائية لعبور أسوار العوائق والوصول إلى الوجهة قد ساهمت في إحياء ملايين القلوب لمئات الآلاف من السنين. إن قصة كسر جبل اليأس وإضاءة نور الأمل تمس جيل اليوم أيضًا. في بحر الشهوة، هذا مثل قطرة ماء صافية مقدسة! يوسف عليه السلام هو بطلنا المنتصر نقيب المؤمنين. سورة يوسف هي انعكاس فريد لحياتنا المتوقعة.",
-            ],
+            desc: [bndesc, endesc, ardesc],
           };
+
+          console.log(newBook);
 
           // addbook
           fetch("https://maktabatul-amzad-server.onrender.com/api/addbook", {
@@ -108,7 +116,13 @@ const AddBook = () => {
             body: JSON.stringify(newBook),
           })
             .then((res) => res.json())
-            .then((data) => console.log(data));
+            .then((data) => {
+              if (data.acknowledged) {
+                toast.success("বইটি সফলভাবে যুক্ত করা হয়েছে");
+              } else {
+                toast.fail("বইটি যুক্ত করা সম্ভব হয়নি");
+              }
+            });
         }
       });
   };
@@ -244,10 +258,79 @@ const AddBook = () => {
                 </select>
               </div>
             </div>
+            {/* ================================Description================================ */}
+            <div className="col-span-4">
+              <div className="grid grid-cols-3 gap-2">
+                <textarea
+                  {...register("bndesc", { required: true })}
+                  placeholder="বাংলায় বইয়ের ব্যাপারে লিখুন"
+                  className="p-2 w-full border h-40 border-primary focus:border-red focus-visible:outline-0"
+                ></textarea>
+                <textarea
+                  {...register("endesc", { required: true })}
+                  placeholder="ইংরেজীতে বইয়ের ব্যাপারে লিখুন"
+                  className="p-2 w-full border h-40 border-primary focus:border-red focus-visible:outline-0"
+                ></textarea>
+                <textarea
+                  {...register("ardesc", { required: true })}
+                  placeholder="আরবীতে বইয়ের ব্যাপারে লিখুন"
+                  className="p-2 w-full border h-40 border-primary focus:border-red focus-visible:outline-0"
+                ></textarea>
+              </div>
+            </div>
+            {/* ================================pages================================ */}
+            <div className="col-span-4">
+              <div className="grid grid-cols-3 gap-2">
+                <input
+                  type="text"
+                  {...register("bnpage", { required: true })}
+                  placeholder="বাংলায় বইয়ের পৃষ্ঠা সংখ্যা লিখুন"
+                  className="p-2 border border-primary focus:border-red focus-visible::outline-0"
+                />
+                <input
+                  type="text"
+                  {...register("enpage", { required: true })}
+                  placeholder="ইংরেজীতে বইয়ের পৃষ্ঠা সংখ্যা লিখুন"
+                  className="p-2 border border-primary focus:border-red focus-visible::outline-0"
+                />
+                <input
+                  type="text"
+                  {...register("arpage", { required: true })}
+                  placeholder="আরবীতে বইয়ের পৃষ্ঠা সংখ্যা লিখুন"
+                  className="p-2 border border-primary focus:border-red focus-visible::outline-0"
+                />
+              </div>
+            </div>
+            {/* ================================Price================================ */}
+            <div className="col-span-4">
+              <div className="grid grid-cols-3 gap-2">
+                <input
+                  type="text"
+                  placeholder="বাংলায় বইয়ের দাম লিখুন"
+                  {...register("bnprice", { required: true })}
+                  className="p-2 border border-primary focus:border-red focus-visible::outline-0"
+                />
+                <input
+                  type="text"
+                  placeholder="ইংরেজীতে বইয়ের দাম লিখুন"
+                  {...register("enprice", { required: true })}
+                  className="p-2 border border-primary focus:border-red focus-visible::outline-0"
+                />
+                <input
+                  type="text"
+                  placeholder="আরবীতে বইয়ের দাম লিখুন"
+                  {...register("arprice", { required: true })}
+                  className="p-2 border border-primary focus:border-red focus-visible::outline-0"
+                />
+              </div>
+            </div>
           </div>
 
           <div className="col-span-3">
-            <button type="submit">Add Book</button>
+            <button type="submit" className="bg-primary text-white py-2.5 px-8">
+              বইটি যুক্ত করুন
+            </button>
+            <Toaster />
           </div>
         </form>
       </div>
