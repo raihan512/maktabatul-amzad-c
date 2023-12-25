@@ -27,16 +27,34 @@ const AdminNav = () => {
           Add Publisher
         </Link>
         <Link
+          to="publisherlist"
+          className="block my-5 border-b w-full text-white "
+        >
+          Check All Publisher
+        </Link>
+        <Link
           to="addcategory"
           className="block my-5 border-b w-full text-white "
         >
           Add Category
         </Link>
         <Link
+          to="categorylist"
+          className="block my-5 border-b w-full text-white "
+        >
+          Check All Category
+        </Link>
+        <Link
           to="addsubcategory"
           className="block my-5 border-b w-full text-white "
         >
           Add Sub Category
+        </Link>
+        <Link
+          to="subcategorylist"
+          className="block my-5 border-b w-full text-white "
+        >
+          Check All Sub Category
         </Link>
       </div>
     </div>

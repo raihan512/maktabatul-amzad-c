@@ -23,6 +23,9 @@ import AddSubSubject from "../Pages/Admin/AddSubSubject/AddSubSubject";
 import BookTable from "../Pages/Admin/BookTable/BookTable";
 import ErrorPage from "../Pages/Shared/ErrorPage/ErrorPage";
 import WriterTable from "../Pages/Admin/WriterTable/WriterTable";
+import CategoryTable from "../Pages/Admin/CategoryTable/CategoryTable";
+import SubCategoryTable from "../Pages/Admin/SubCategoryTable/SubCategoryTable";
+import PublisherTable from "../Pages/Admin/PublisherTable/PublisherTable";
 
 export const router = createBrowserRouter([
   {
@@ -129,6 +132,18 @@ export const router = createBrowserRouter([
       {
         path: "writerlist",
         element: <WriterTable></WriterTable>,
+      },
+      {
+        path: "categorylist",
+        element: <CategoryTable></CategoryTable>,
+      },
+      {
+        path: "subcategorylist",
+        element: <SubCategoryTable></SubCategoryTable>,
+      },
+      {
+        path: "publisherlist",
+        element: <PublisherTable></PublisherTable>,
       },
       {
         path: "addpublisher",

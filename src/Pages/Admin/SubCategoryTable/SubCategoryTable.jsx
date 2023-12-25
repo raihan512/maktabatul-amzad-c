@@ -2,19 +2,18 @@ import { useContext, useEffect, useState } from "react";
 import { ThemeContext } from "../../../Providers/ThemeProvider";
 import { Link } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
-
-const WriterTable = () => {
+const SubCategoryTable = () => {
   const { language } = useContext(ThemeContext);
-  const [allWriters, setAllWriters] = useState([]);
+  const [allSubCategories, setAllSubCategories] = useState([]);
   useEffect(() => {
-    fetch("https://maktabatul-amzad-server.onrender.com/api/writers")
+    fetch("https://maktabatul-amzad-server.onrender.com/api/subcategories")
       .then((res) => res.json())
-      .then((data) => setAllWriters(data));
+      .then((data) => setAllSubCategories(data));
   }, []);
 
-  const handleDelWriter = (id) => {
+  const handleDelSubCatgeories = (id) => {
     fetch(
-      `https://maktabatul-amzad-server.onrender.com/api/deletewriter/${id}`,
+      `https://maktabatul-amzad-server.onrender.com/api/deletesubcategory/${id}`,
       {
         method: "DELETE",
       }
@@ -22,7 +21,7 @@ const WriterTable = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.acknowledged) {
-          toast.success("লেখককে ডিলিট করা হয়েছে");
+          toast.success("সাব ক্যাটাগরি ডিলিট করা হয়েছে");
         }
       });
   };
@@ -30,26 +29,27 @@ const WriterTable = () => {
     <div className="p-5">
       <h2>See All Writers</h2>
 
-      {/* All books table */}
+      {/* All Sub Categories table */}
       <div>
-        {allWriters.map((writer) => (
+        {allSubCategories.map((subCategory) => (
           <div
             className="grid grid-cols-7 gap-2 border p-2 border-primary mb-2"
-            key={writer?._id}
+            key={subCategory?._id}
           >
-            <img src={`${writer?.image}`} className="h-28 col-span-1" alt="" />
-            <p className="truncate col-span-3">{writer?.name[language]}</p>
+            <p className="truncate col-span-3">{subCategory?.name[language]}</p>
             <div className="col-span-2">
               <button className="bg-primary py-2 px-5 text-white">
-                <Link to={`/updatewriter/${writer._id}`}>Update writer</Link>
+                <Link to={`/updatewriter/${subCategory?._id}`}>
+                  Update SubCategory
+                </Link>
               </button>
             </div>
-            <div className="col-span-1">
+            <div className="col-span-2">
               <button
                 className="bg-red py-2 px-5 text-white"
-                onClick={() => handleDelWriter(writer._id)}
+                onClick={() => handleDelSubCatgeories(subCategory?._id)}
               >
-                Delete Book
+                Delete Sub Category
               </button>
               <Toaster />
             </div>
@@ -60,4 +60,4 @@ const WriterTable = () => {
   );
 };
 
-export default WriterTable;
+export default SubCategoryTable;
