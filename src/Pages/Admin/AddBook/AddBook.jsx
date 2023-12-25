@@ -1,12 +1,13 @@
 import { useContext, useEffect, useState } from "react";
 import InputField from "../../../Components/InputField";
 import { ThemeContext } from "../../../Providers/ThemeProvider";
-import { json } from "react-router-dom";
+import { json, useNavigate } from "react-router-dom";
 import { data } from "autoprefixer";
 import { useForm } from "react-hook-form";
 import toast, { Toaster } from "react-hot-toast";
 
 const AddBook = () => {
+  const navigate = useNavigate("");
   const {
     register,
     handleSubmit,
@@ -119,6 +120,7 @@ const AddBook = () => {
             .then((data) => {
               if (data.acknowledged) {
                 toast.success("বইটি সফলভাবে যুক্ত করা হয়েছে");
+                navigate("/admin/booklist");
               } else {
                 toast.fail("বইটি যুক্ত করা সম্ভব হয়নি");
               }

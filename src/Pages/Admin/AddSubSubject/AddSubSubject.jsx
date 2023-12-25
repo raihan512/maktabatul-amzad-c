@@ -2,8 +2,10 @@ import { useContext, useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import toast, { Toaster } from "react-hot-toast";
 import { ThemeContext } from "../../../Providers/ThemeProvider";
+import { useNavigate } from "react-router-dom";
 
 const AddSubSubject = () => {
+  const navigate = useNavigate("");
   const { language } = useContext(ThemeContext);
 
   const {
@@ -40,6 +42,7 @@ const AddSubSubject = () => {
       .then((data) => {
         if (data.acknowledged) {
           toast.success("সাব ক্যাটেগরি সফলভাবে যুক্ত করা হয়েছে");
+          navigate("/admin/subcategorylist");
         } else {
           toast.fail("সাব ক্যাটেগরি যুক্ত করা সম্ভব হয়নি");
         }

@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import toast, { Toaster } from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 
 const AddWriter = () => {
+  const navigate = useNavigate("");
   const {
     register,
     handleSubmit,
@@ -48,6 +50,7 @@ const AddWriter = () => {
               .then((data) => {
                 if (data.acknowledged) {
                   toast.success("লেখক সফলভাবে যুক্ত করা হয়েছে");
+                  navigate("/admin/writerlist");
                 } else {
                   toast.fail("লেখক যুক্ত করা সম্ভব হয়নি");
                 }
@@ -67,6 +70,7 @@ const AddWriter = () => {
         .then((data) => {
           if (data.acknowledged) {
             toast.success("লেখক সফলভাবে যুক্ত করা হয়েছে");
+            navigate("/admin/writerlist");
           } else {
             toast.fail("লেখক যুক্ত করা সম্ভব হয়নি");
           }

@@ -12,18 +12,18 @@ const PublisherTable = () => {
   }, []);
 
   const handleDelPublisher = (id) => {
-    // fetch(
-    //   `https://maktabatul-amzad-server.onrender.com/api/deletepublisher/${id}`,
-    //   {
-    //     method: "DELETE",
-    //   }
-    // )
-    //   .then((res) => res.json())
-    //   .then((data) => {
-    //     if (data.acknowledged) {
-    //       toast.success("পাবলিশারকে ডিলিট করা হয়েছে");
-    //     }
-    //   });
+    fetch(
+      `https://maktabatul-amzad-server.onrender.com/api/deletepublisher/${id}`,
+      {
+        method: "DELETE",
+      }
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.acknowledged) {
+          toast.success("পাবলিশারকে ডিলিট করা হয়েছে");
+        }
+      });
   };
   return (
     <div className="p-5">
