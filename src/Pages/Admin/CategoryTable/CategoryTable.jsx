@@ -12,18 +12,18 @@ const CategoryTable = () => {
   }, []);
 
   const handleDelCategory = (id) => {
-    // fetch(
-    //   `https://maktabatul-amzad-server.onrender.com/api/deletecategory/${id}`,
-    //   {
-    //     method: "DELETE",
-    //   }
-    // )
-    //   .then((res) => res.json())
-    //   .then((data) => {
-    //     if (data.acknowledged) {
-    //       toast.success("ক্যাটেগরি ডিলিট করা হয়েছে");
-    //     }
-    //   });
+    fetch(
+      `https://maktabatul-amzad-server.onrender.com/api/deletecategory/${id}`,
+      {
+        method: "DELETE",
+      }
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.acknowledged) {
+          toast.success("ক্যাটেগরি ডিলিট করা হয়েছে");
+        }
+      });
   };
   return (
     <div className="p-5">
