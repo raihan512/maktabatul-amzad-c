@@ -22,6 +22,7 @@ import AddSubject from "../Pages/Admin/AddSubject/AddSubject";
 import AddSubSubject from "../Pages/Admin/AddSubSubject/AddSubSubject";
 import BookTable from "../Pages/Admin/BookTable/BookTable";
 import ErrorPage from "../Pages/Shared/ErrorPage/ErrorPage";
+import WriterTable from "../Pages/Admin/WriterTable/WriterTable";
 
 export const router = createBrowserRouter([
   {
@@ -124,6 +125,10 @@ export const router = createBrowserRouter([
       {
         path: "addwriter",
         element: <AddWriter></AddWriter>,
+      },
+      {
+        path: "writerlist",
+        element: <WriterTable></WriterTable>,
       },
       {
         path: "addpublisher",

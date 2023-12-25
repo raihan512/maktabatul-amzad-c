@@ -15,6 +15,12 @@ const AdminNav = () => {
           Add Writer
         </Link>
         <Link
+          to="writerlist"
+          className="block my-5 border-b w-full text-white "
+        >
+          Check All Writer
+        </Link>
+        <Link
           to="addpublisher"
           className="block my-5 border-b w-full text-white "
         >
