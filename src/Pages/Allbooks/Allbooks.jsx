@@ -20,7 +20,7 @@ const Allbooks = () => {
           ))}
         </div>
         {/* Pagination */}
-        <div className="flex justify-center items-center mt-10">
+        {/* <div className="flex justify-center items-center mt-10">
           <button className="py-1 px-3 mx-2 border transition-all hover:border-primary hover:bg-primary hover:text-white">
             Prev
           </button>
@@ -36,7 +36,7 @@ const Allbooks = () => {
           <button className="py-1 px-3 mx-2 border transition-all hover:border-primary hover:bg-primary hover:text-white">
             Next
           </button>
-        </div>
+        </div> */}
       </div>
     </section>
   );

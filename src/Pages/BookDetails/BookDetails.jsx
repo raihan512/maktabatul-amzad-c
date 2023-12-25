@@ -46,21 +46,16 @@ const BookDetails = () => {
   }, []);
 
   // Load this book publisher details
-  const [selectedPublisher, setSelectedPublisher] = useState([]);
+  const [allPublisher, setAllPublisher] = useState([]);
   useEffect(() => {
-    fetch(
-      "https://maktabatul-amzad-server.onrender.com/api/publishers/getpublisher",
-      {
-        method: "POST",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify([`${publisher}`]),
-      }
-    )
+    fetch("https://maktabatul-amzad-server.onrender.com/api/publishers")
       .then((res) => res.json())
-      .then((data) => setSelectedPublisher(data));
+      .then((data) => setAllPublisher(data));
   }, []);
+
+  const selectedPublisher = allPublisher.find(
+    (pb) => pb.publisherId === publisher
+  );
   // Load this book categories details writers
   const [selectedCategory, setSelectedCategory] = useState([]);
   useEffect(() => {
@@ -144,15 +139,7 @@ const BookDetails = () => {
                         : "Publisher:"}
                     </div>
                     <div className="ml-5">
-                      {selectedPublisher.map((pb) => (
-                        <Link
-                          to={`/publishers/${pb.publisherId}`}
-                          key={pb.publisherId}
-                          className="hover:text-red"
-                        >
-                          {pb.name[language]}
-                        </Link>
-                      ))}
+                      {selectedPublisher?.name[language]}
                     </div>
                   </div>
                   {/* Categories */}

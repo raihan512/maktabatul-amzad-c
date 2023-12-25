@@ -2,31 +2,31 @@ import { Link } from "react-router-dom";
 import {} from "./writer.css";
 import { useEffect, useState } from "react";
 import { FaBook } from "react-icons/fa6";
+import { FaRegUserCircle } from "react-icons/fa";
 
 const Writer = ({ writer, language }) => {
   const { name, image, writerId } = writer;
   // Load this writer books
-  const [writerBooks, setWriterBooks] = useState([]);
+  const [books, setBooks] = useState([]);
   useEffect(() => {
-    fetch(
-      "https://maktabatul-amzad-server.onrender.com/api/books/writerbooks",
-      {
-        method: "POST",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify([`${writerId}`]),
-      }
-    )
+    fetch("https://maktabatul-amzad-server.onrender.com/api/books")
       .then((res) => res.json())
-      .then((data) => setWriterBooks(data));
+      .then((data) => setBooks(data));
   }, []);
+
+  const writerBooks = books.filter((book) => book.writer.includes(writerId));
+  console.log(writerBooks);
+
   return (
     <div className=" p-5 border hover:border-primary writer-card overflow-hidden">
       <Link to={`${writerId}`}>
         <div className="border-b border-red flex flex-col items-center">
           <div className="w-[100px] h-[100px] rounded-full overflow-hidden">
-            <img src={image} className="mx-auto" alt="" />
+            {image ? (
+              <img src={image} className="mx-auto" alt="" />
+            ) : (
+              <FaRegUserCircle className="text-[100px]" />
+            )}
           </div>
           <p className="truncate text-lg font-semibold mt-5 text-primary">
             {name[language]}

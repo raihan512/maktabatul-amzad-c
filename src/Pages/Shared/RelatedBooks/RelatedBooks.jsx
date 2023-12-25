@@ -17,8 +17,6 @@ const RelatedBooks = ({ bookCategory }) => {
       .then((res) => res.json())
       .then((data) => setBooks(data));
   }, []);
-  // console.log(bookCategory);
-  console.log(books);
   return (
     <div>
       {books.map((book) => (
