@@ -12,7 +12,7 @@ const AdminRoute = ({ children }) => {
       </>
     );
 
-  if (user?.email !== "raihangazi1024@gmail.com") {
+  if (user?.email !== "maktabatulamzad@gmail.com") {
     return <Navigate to="/allbooks"></Navigate>;
   }
 
