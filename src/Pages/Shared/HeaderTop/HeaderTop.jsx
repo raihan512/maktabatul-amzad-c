@@ -113,15 +113,18 @@ const HeaderTop = () => {
                   {accountIsOpen && (
                     <div className="absolute top-6 right-0 z-50 ">
                       <div className="bg-red flex flex-col">
+                        {user.email === "raihangazi1024@gmail.com" && (
+                          <Link
+                            className="text-base text-black py-2 pl-8 pr-20 hover:bg-gray hover:text-white"
+                            to="admin"
+                          >
+                            Admin
+                          </Link>
+                        )}
+
                         <Link
                           className="text-base text-black py-2 pl-8 pr-20 hover:bg-gray hover:text-white"
-                          to="admin"
-                        >
-                          Admin
-                        </Link>
-                        <Link
-                          className="text-base text-black py-2 pl-8 pr-20 hover:bg-gray hover:text-white"
-                          to="signin"
+                          to="/auth/profile"
                         >
                           My Profile
                         </Link>

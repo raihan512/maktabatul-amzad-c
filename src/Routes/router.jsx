@@ -26,6 +26,8 @@ import WriterTable from "../Pages/Admin/WriterTable/WriterTable";
 import CategoryTable from "../Pages/Admin/CategoryTable/CategoryTable";
 import SubCategoryTable from "../Pages/Admin/SubCategoryTable/SubCategoryTable";
 import PublisherTable from "../Pages/Admin/PublisherTable/PublisherTable";
+import AdminRoute from "./AdminRoute";
+import Profile from "../Pages/User/Profile/Profile";
 
 export const router = createBrowserRouter([
   {
@@ -66,11 +68,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/book/:id",
-        element: (
-          <PrivateRoute>
-            <BookDetails></BookDetails>
-          </PrivateRoute>
-        ),
+        element: <BookDetails></BookDetails>,
         loader: ({ params }) =>
           fetch(
             `https://maktabatul-amzad-server.onrender.com/api/books/${params.id}`
@@ -111,11 +109,19 @@ export const router = createBrowserRouter([
         path: "/auth/confirmemail",
         element: <ConfirmEmail></ConfirmEmail>,
       },
+      {
+        path: "/auth/profile",
+        element: <Profile></Profile>,
+      },
     ],
   },
   {
     path: "/admin",
-    element: <Admin></Admin>,
+    element: (
+      <AdminRoute>
+        <Admin></Admin>
+      </AdminRoute>
+    ),
     children: [
       {
         path: "addbook",
