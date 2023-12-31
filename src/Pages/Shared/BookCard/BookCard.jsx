@@ -28,7 +28,7 @@ const BookCard = ({ book }) => {
   }, []);
 
   return (
-    <div className="book-card w-40 h-[320px] overflow-hidden p-2 mx-auto ease-in duration-300">
+    <div className="book-card w-40 h-[320px] overflow-hidden p-2 ease-in duration-300">
       <Link to={`/book/${book._id}`}>
         <img
           src={`${thumb}`}

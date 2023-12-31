@@ -8,9 +8,9 @@ const Tabs = () => {
   const sliderBtns = useRef(null);
 
   const [allBooks, setAllBooks] = useState([]);
-  const upcomingBooks = allBooks.filter((book) => book.status === "upcoming");
+  const upcomingBooks = allBooks.filter((book) => book.stock > 0);
 
-  fetch("http://localhost:5000/books")
+  fetch("https://maktabatul-amzad-server.onrender.com/api/books")
     .then((res) => res.json())
     .then((data) => setAllBooks(data));
 
