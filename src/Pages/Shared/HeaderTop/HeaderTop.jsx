@@ -11,8 +11,14 @@ import { CiLogin } from "react-icons/ci";
 import { Link, json } from "react-router-dom";
 import { AuthContext } from "../../../Providers/AuthProviders";
 import { ThemeContext } from "../../../Providers/ThemeProvider";
+import { CartContext } from "../../../Providers/CartProviders";
 
 const HeaderTop = () => {
+  const { cart } = useContext(CartContext);
+  const cartItem = cart.reduce(
+    (acc, currentValue) => acc + currentValue.quantity,
+    0
+  );
   const accountMenuRef = useRef();
   const [accountIsOpen, setAccountIsOpen] = useState(false);
 
@@ -63,7 +69,9 @@ const HeaderTop = () => {
           <div className="flex items-center">
             <div className="flex items-center mr-1 sm:mr-5 relative">
               <BsCartCheckFill className="mr-1" /> Cart (
-              <span className="text-red">0 item</span>)
+              <Link to="cartdetails">
+                <span className="text-red">{cartItem} item</span>)
+              </Link>
               <div className="cart-menu absolute top-5 right-0 hidden hover:block">
                 <h1>Hello</h1>
               </div>

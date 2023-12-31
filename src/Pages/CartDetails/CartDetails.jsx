@@ -6,8 +6,7 @@ import { CartContext } from "../../Providers/CartProviders";
 
 const CartDetails = () => {
   const { user } = useContext(AuthContext);
-  const { orders } = useContext(CartContext);
-  console.log(orders.length);
+  const { cart, handleDeleteCartItem } = useContext(CartContext);
   // const [orders, setOrders] = useState([]);
   // useEffect(() => {
   //   fetch(`http://localhost:5000/orders?email=${user.email}`, {
@@ -35,45 +34,48 @@ const CartDetails = () => {
   //     });
   // };
 
-  // const totlaPrice = orders.reduce((init, order) => init + order.price, 0);
-  // const grandTotal = totlaPrice + 50 + 0;
+  const totlaPrice = cart.reduce(
+    (acc, curr) => acc + parseInt(curr.price[1] * curr.quantity),
+    0
+  );
+  const grandTotal = totlaPrice + 50 + 0;
   return (
     <section className="min-h-screen">
-      {/* <div className="container mx-auto px-0.5 sm:px-3 md:px-0 mb-8"> */}
-      <h3 className="text-2xl md:text-4xl lg:text-4xl font-bold text-primary text-center mt-5 mb-10">
-        My cart details
-      </h3>
-      {/*
+      <div className="container mx-auto px-0.5 sm:px-3 md:px-0 mb-8">
+        <h3 className="text-2xl md:text-4xl lg:text-4xl font-bold text-primary text-center mt-5 mb-10">
+          My cart details
+        </h3>
+
         <div className="grid grid-cols-1 border border-primary border-b-0">
-          {orders.map((order) => (
+          {cart?.map((cartItem) => (
             <CartItem
-              key={order._id}
-              order={order}
-              handleDeleteOrderItem={handleDeleteOrderItem}
+              key={cartItem?._id}
+              cart={cartItem}
+              handleDeleteCartItem={handleDeleteCartItem}
             ></CartItem>
           ))}
-        </div> */}
+        </div>
 
-      {/* <div className="my-5 md:w-6/12 lg:4/12 ml-auto">
+        <div className="my-5 md:w-6/12 lg:4/12 ml-auto">
           <div className="my-2 flex justify-between">
             <p>Total Price</p>
-            <p>{totlaPrice}$</p>
+            <p>{totlaPrice} TK</p>
           </div>
           <div className="my-2 flex justify-between">
             <p>Delivery Charge</p>
-            <p>50$</p>
+            <p>50 TK</p>
           </div>
           <div className="my-2 flex justify-between">
             <p>Discount</p>
-            <p>0$</p>
+            <p>0 TK</p>
           </div>
           <div className="my-2 flex justify-between border-t border-primary">
             <p>Grand Total</p>
-            <p>{grandTotal}</p>
+            <p>{grandTotal} TK</p>
           </div>
-          <PrimaryBtn>Proceed To Ceckout</PrimaryBtn> */}
-      {/* </div>
-      </div> */}
+          <PrimaryBtn>Confirm Order</PrimaryBtn>
+        </div>
+      </div>
     </section>
   );
 };
