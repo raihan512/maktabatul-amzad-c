@@ -7,32 +7,6 @@ import { CartContext } from "../../Providers/CartProviders";
 const CartDetails = () => {
   const { user } = useContext(AuthContext);
   const { cart, handleDeleteCartItem } = useContext(CartContext);
-  // const [orders, setOrders] = useState([]);
-  // useEffect(() => {
-  //   fetch(`http://localhost:5000/orders?email=${user.email}`, {
-  //     method: "GET",
-  //     headers: {
-  //       authorization: `Bearer ${localStorage.getItem(
-  //         "maktabatul-amzad-token"
-  //       )}`,
-  //     },
-  //   })
-  //     .then((res) => res.json())
-  //     .then((data) => setOrders(data));
-  // }, []);
-
-  // const handleDeleteOrderItem = (id) => {
-  //   fetch(`http://localhost:5000/orders/${id}`, {
-  //     method: "DELETE",
-  //   })
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       if (data.deletedCount > 0) {
-  //         const remainingOrders = orders.filter((order) => order._id !== id);
-  //         setOrders(remainingOrders);
-  //       }
-  //     });
-  // };
 
   const totlaPrice = cart.reduce(
     (acc, curr) => acc + parseInt(curr.price[1] * curr.quantity),
