@@ -214,8 +214,6 @@ const BookDetails = () => {
                 <PrimaryBtn action={() => handleAddtoCart(bookDetails)}>
                   {language == 0
                     ? "কার্টে যোগ করুন"
-                    : language == 1
-                    ? "Add to cart"
                     : language == 2
                     ? "أضف إلى السلة"
                     : "Add to cart"}

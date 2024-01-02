@@ -4,6 +4,7 @@ import {} from "./Bookcard.css";
 import { useContext, useEffect, useState } from "react";
 import { CartContext } from "../../../Providers/CartProviders";
 import { ThemeContext } from "../../../Providers/ThemeProvider";
+import toast, { Toaster } from "react-hot-toast";
 
 const BookCard = ({ book }) => {
   // Themecontext
@@ -11,6 +12,8 @@ const BookCard = ({ book }) => {
   const { handleAddtoCart } = useContext(CartContext);
   const { title, writer, thumb, price } = book;
   const [selectedWriters, setSelectedWriters] = useState([]);
+  // toast.success("Product added");
+
   // Load this book writers details writers
   useEffect(() => {
     fetch(
@@ -62,13 +65,13 @@ const BookCard = ({ book }) => {
         >
           {language == 0
             ? "কার্টে যোগ করুন"
-            : language == 1
-            ? "Add to cart"
             : language == 2
             ? "أضف إلى السلة"
             : "Add to cart"}
         </button>
+        <div></div>
       </div>
+      <Toaster />
     </div>
   );
 };
