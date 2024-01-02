@@ -3,16 +3,28 @@ import { AuthContext } from "../../Providers/AuthProviders";
 import CartItem from "./CartItem/CartItem";
 import PrimaryBtn from "../../Components/Buttons/PrimaryBtn";
 import { CartContext } from "../../Providers/CartProviders";
+import { Link } from "react-router-dom";
 
 const CartDetails = () => {
   const { user } = useContext(AuthContext);
+  const [quantityChanged, setQuantityChanged] = useState(0);
   const { cart, handleDeleteCartItem } = useContext(CartContext);
 
-  const totlaPrice = cart.reduce(
-    (acc, curr) => acc + parseInt(curr.price[1] * curr.quantity),
-    0
-  );
+  let [totlaPrice, setTotalPrice] = useState(0);
+  useEffect(() => {
+    totlaPrice = cart.reduce(
+      (acc, curr) => acc + parseInt(curr.price[1] * curr.quantity),
+      0
+    );
+    setTotalPrice(totlaPrice);
+  }, [quantityChanged]);
+
   const grandTotal = totlaPrice + 50 + 0;
+
+  const handleDeleteItem = (id) => {
+    handleDeleteCartItem(id);
+    setQuantityChanged(quantityChanged + 1);
+  };
   return (
     <section className="min-h-screen">
       <div className="container mx-auto px-0.5 sm:px-3 md:px-0 mb-8">
@@ -23,9 +35,11 @@ const CartDetails = () => {
         <div className="grid grid-cols-1 border border-primary border-b-0">
           {cart?.map((cartItem) => (
             <CartItem
+              setQuantityChanged={setQuantityChanged}
+              quantityChanged={quantityChanged}
               key={cartItem?._id}
               cart={cartItem}
-              handleDeleteCartItem={handleDeleteCartItem}
+              handleDeleteItem={handleDeleteItem}
             ></CartItem>
           ))}
         </div>
@@ -47,7 +61,9 @@ const CartDetails = () => {
             <p>Grand Total</p>
             <p>{grandTotal} TK</p>
           </div>
-          <PrimaryBtn>Confirm Order</PrimaryBtn>
+          <PrimaryBtn>
+            <Link to="/confirmorder">Checkout</Link>
+          </PrimaryBtn>
         </div>
       </div>
     </section>

@@ -28,6 +28,7 @@ import SubCategoryTable from "../Pages/Admin/SubCategoryTable/SubCategoryTable";
 import PublisherTable from "../Pages/Admin/PublisherTable/PublisherTable";
 import AdminRoute from "./AdminRoute";
 import Profile from "../Pages/User/Profile/Profile";
+import ConfirmOrder from "../Pages/ConfirmOrder/ConfirmOrder";
 
 export const router = createBrowserRouter([
   {
@@ -88,6 +89,14 @@ export const router = createBrowserRouter([
         element: (
           // <PrivateRoute>
           <CartDetails></CartDetails>
+          // </PrivateRoute>
+        ),
+      },
+      {
+        path: "/confirmorder",
+        element: (
+          // <PrivateRoute>
+          <ConfirmOrder></ConfirmOrder>
           // </PrivateRoute>
         ),
       },

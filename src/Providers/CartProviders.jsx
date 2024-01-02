@@ -48,6 +48,7 @@ const CartProvider = ({ children }) => {
       ),
       { position: "top-right" }
     );
+
     const existCart = cart.find((cartItem) => cartItem._id === book._id);
     if (existCart) {
       // If the product is already in the cart, update its quantity
@@ -66,7 +67,7 @@ const CartProvider = ({ children }) => {
     setCart(remainingcart);
   };
 
-  const cartInfo = { handleAddtoCart, cart, handleDeleteCartItem };
+  const cartInfo = { handleAddtoCart, cart, setCart, handleDeleteCartItem };
 
   return (
     <CartContext.Provider value={cartInfo}>{children}</CartContext.Provider>
